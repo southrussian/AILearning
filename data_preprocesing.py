@@ -12,3 +12,13 @@ data_binarized = preprocessing.Binarizer(threshold=2.1).transform(input_data)
 print(data_binarized)
 
 # все значения выше 2.1 принудительно устанавливаются равными 1
+
+# исключение среднего
+print("\nBefore:")
+print("Mean =", input_data.mean(axis=0))  # среднее значение
+print("Standard deviation =", input_data.std(axis=0))  # стандартное отклонение
+
+data_scaled = preprocessing.scale(input_data)
+print("\nAfter:")
+print("Mean =", data_scaled.mean(axis=0))
+print("Standard deviation =", data_scaled.mean(axis=0))
