@@ -15,5 +15,11 @@ encoded_values = encoder.transform(test_labels)
 print('\nLabels:\n', test_labels)
 print('\nEncoded values:\n', encoded_values)
 
+# декодирование случайного набора чисел
+values = [5, 2, 0, 3]
+decoded_list = encoder.inverse_transform(values)
+print('\nValues:\n', values)
+print('\nDecoded list:\n', decoded_list)
+
 
 
