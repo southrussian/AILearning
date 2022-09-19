@@ -9,3 +9,11 @@ print("Label mapping:")
 for i, item in enumerate(encoder.classes_):
     print(item, "-->", i)  # вывод отображения слов на числа
 
+# преобразование меток с помощью кодировщика
+test_labels = ['red', 'black', 'yellow']
+encoded_values = encoder.transform(test_labels)
+print('\nLabels:\n', test_labels)
+print('\nEncoded values:\n', encoded_values)
+
+
+
