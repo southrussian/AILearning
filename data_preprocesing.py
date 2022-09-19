@@ -30,3 +30,23 @@ data_scaler_min_max = data_scaler_min_max.fit_transform(input_data)
 print("\nMin max scaled data:\n", data_scaler_min_max)
 # максимальное значение равно 1, остальные определяются относительно него
 
+# нормализация. L1-нормализация применяет метод наименьших абсолютных отклонений и обеспечивает равенство 1 абсолютных значений в каждом ряду
+# L2-нормализация использует метод наименьших квадратов и обеспечивает равенство 1 квадратов значений в ряду
+# L1 более надежный вариант, он менее чувствителен к выбросам
+
+data_normalazed_l1 = preprocessing.normalize(input_data, norm='l1')
+data_normalazed_l2 = preprocessing.normalize(input_data, norm='l2')
+print("\nL1 =\n", data_normalazed_l1)
+print("\nL2 =\n", data_normalazed_l2)
+
+print()
+vector_summary_l1 = 0
+for vector in data_normalazed_l1[0]:
+    vector_summary_l1 += vector
+print(vector_summary_l1)
+
+vector_summary_l2 = 0
+for vector in data_normalazed_l2[0]:
+    vector_summary_l2 += vector
+print(vector_summary_l2)
+
