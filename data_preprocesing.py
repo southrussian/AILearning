@@ -22,3 +22,11 @@ data_scaled = preprocessing.scale(input_data)
 print("\nAfter:")
 print("Mean =", data_scaled.mean(axis=0))
 print("Standard deviation =", data_scaled.mean(axis=0))
+
+# масштабирование
+# масштабирование признаков в векторе для ровного поля для тренировки алгоритма машинного обучения
+data_scaler_min_max = preprocessing.MinMaxScaler(feature_range=(0, 1))
+data_scaler_min_max = data_scaler_min_max.fit_transform(input_data)
+print("\nMin max scaled data:\n", data_scaler_min_max)
+# максимальное значение равно 1, остальные определяются относительно него
+
